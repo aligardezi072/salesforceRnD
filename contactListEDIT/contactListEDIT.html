@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Contacts Datatable">
+        
+        <lightning-input 
+                        type="Search"
+                        onchange={handleChanged}
+                        label="Search"
+                        value={searchKey}>
+                    </lightning-input>
+        <lightning-datatable if:true={contacts.data}
+                    key-field="Id"
+                    data={contacts.data}
+                    columns={columns}
+                    draft-values={draftValues}
+                    onsave={handleSave}>
+        </lightning-datatable>
+    
+    </lightning-card>
+</template>
